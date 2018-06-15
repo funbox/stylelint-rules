@@ -4,7 +4,7 @@ import { namespace } from "../../utils";
 export const ruleName = namespace("no-transition-all");
 
 export const messages = utils.ruleMessages(ruleName, {
-  rejected: propertyName => 'The keyword `all` should not be used with the property `' + propertyName + '`'
+  rejected: 'The keyword "all" should not be used with the "transition" property',
 });
 
 export default function (actual) {

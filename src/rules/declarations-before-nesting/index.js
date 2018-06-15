@@ -4,7 +4,7 @@ import { namespace } from "../../utils";
 export const ruleName = namespace("declarations-before-nesting");
 
 export const messages = utils.ruleMessages(ruleName, {
-  expected: () => 'Expected all declarations to come before nestings'
+  expected: "Expected all declarations to come before nestings"
 });
 
 export default function (expectation) {
@@ -36,7 +36,7 @@ export default function (expectation) {
 
         if (rulesetIndex < declarationIndex && declaration) {
           utils.report({
-            message: messages.expected(namespace),
+            message: messages.expected,
             node: declaration,
             result,
             ruleName,
