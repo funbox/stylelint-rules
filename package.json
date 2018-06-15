@@ -4,12 +4,17 @@
   "description": "A collection of SCSS rules missing in stylelint-scss",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ignore-path .gitignore"
+    "lint": "eslint . --ignore-path .gitignore",
+    "jest": "jest",
+    "watch": "jest --watch",
+    "test-rule": "jest"
   },
   "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^4.19.1",
     "eslint-plugin-sort-requires": "^2.1.0",
+    "jest": "^23.1.0",
     "postcss": "^6.0.22",
     "postcss-scss": "^1.0.5",
     "stylelint": "^9.2.1",
@@ -49,5 +54,14 @@
       "prefer-const": "error",
       "template-curly-spacing": "error"
     }
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest-setup.js"
+    ],
+    "testRegex": "src/.*/__tests__/.*\\.js$"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
   }
 }
