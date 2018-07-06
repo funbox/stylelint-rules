@@ -1,8 +1,8 @@
-import declarationsBeforeNesting from "./declarations-before-nesting";
-import noTransitionAll from "./no-transition-all";
+import declarationsBeforeNesting from './declarations-before-nesting';
+import noTransitionAll from './no-transition-all';
 
 export default {
-  "declarations-before-nesting": declarationsBeforeNesting,
-  "no-transition-all": noTransitionAll,
+  'declarations-before-nesting': declarationsBeforeNesting,
+  'no-transition-all': noTransitionAll,
 };
 

@@ -17,7 +17,7 @@ testRule(rule, {
       }
      `,
       description: 'One group, one nested group, declaration before nested group.',
-    }
+    },
   ],
 
   reject: [

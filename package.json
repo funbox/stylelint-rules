@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "npm run lint-js",
+    "lint-js": "bash ./config/bin/lint-js",
     "jest": "jest",
     "watch": "jest --watch",
     "test-rule": "jest"
@@ -15,48 +16,11 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^23.0.1",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^4.19.1",
-    "eslint-plugin-sort-requires": "^2.1.0",
+    "eslint": "3.19.0",
+    "eslint-config-funbox": "2.1.0",
     "jest": "^23.1.0",
     "postcss": "^6.0.22",
-    "postcss-scss": "^1.0.5",
-    "stylelint": "^9.2.1",
-    "stylelint-scss": "^3.1.0"
-  },
-  "eslintConfig": {
-    "extends": "eslint:recommended",
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 6
-    },
-    "env": {
-      "es6": true,
-      "jest": true,
-      "node": true
-    },
-    "plugins": [
-      "sort-requires"
-    ],
-    "globals": {
-      "testRule": true
-    },
-    "rules": {
-      "eqeqeq": "error",
-      "no-use-before-define": [
-        "error",
-        "nofunc"
-      ],
-      "sort-requires/sort-requires": "error",
-      "strict": [
-        "error",
-        "global"
-      ],
-      "arrow-spacing": "error",
-      "no-var": "error",
-      "object-shorthand": "error",
-      "prefer-const": "error",
-      "template-curly-spacing": "error"
-    }
+    "postcss-scss": "^1.0.5"
   },
   "jest": {
     "setupFiles": [
@@ -65,6 +29,8 @@
     "testRegex": "src/.*/__tests__/.*\\.js$"
   },
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "stylelint": "^9.2.1",
+    "stylelint-scss": "^3.1.0"
   }
 }

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+eslint --cache -c config/.eslintrc --ext .js src config
