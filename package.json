@@ -8,6 +8,7 @@
     "lint": "npm run lint-js",
     "lint-js": "bash ./config/bin/lint-js",
     "prebuild": "npm run lint",
+    "prepublish": "npm run build",
     "precommit": "lint-staged",
     "postcommit": "git update-index --again",
     "jest": "jest",
