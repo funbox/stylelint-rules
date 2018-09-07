@@ -5,4 +5,3 @@ export default {
   'declarations-before-nesting': declarationsBeforeNesting,
   'no-transition-all': noTransitionAll,
 };
-
