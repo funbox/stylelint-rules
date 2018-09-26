@@ -39,6 +39,7 @@ Session.vim
 .netrwhist
 *~
 /tmp
+/dist
 
 
 # -- Eclipse --
