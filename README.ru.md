@@ -2,7 +2,7 @@
 
 Плагин для [Stylelint](https://stylelint.io/), добавляющий кастомные правила линтинга.
 
-Используется в пакете scss-linter-config.
+Используется в пакете scss-lint-config.
 
 ## Список правил
 
