@@ -1,6 +1,6 @@
 {
   "name": "@funboxteam/stylelint-rules",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of SCSS rules missing in stylelint-scss",
   "main": "dist/index.js",
   "scripts": {
