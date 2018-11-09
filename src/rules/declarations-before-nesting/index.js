@@ -17,7 +17,7 @@ export default function (expectation) {
       return;
     }
 
-    root.walkRules((block) => {
+    root.walkRules(block => {
       let rulesetIndex;
 
       block.each((item, j) => {
@@ -28,7 +28,7 @@ export default function (expectation) {
           rulesetIndex = j;
         }
 
-        if (item.type !== 'rule') {
+        if (item.type === 'decl') {
           declarationIndex = j;
           declaration = item;
         }

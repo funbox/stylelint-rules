@@ -18,6 +18,24 @@ testRule(rule, {
      `,
       description: 'One group, one nested group, declaration before nested group.',
     },
+
+    {
+      code: `
+      .bar {
+        content: 'baz';        
+        
+        .qux {
+          content: 'baz';
+        }
+        
+        // Comment on group
+        .zux {
+          content: 'baz';
+        }
+      }
+     `,
+      description: 'One group, two nested groups, declaration before nested group, comment after nested group.',
+    },
   ],
 
   reject: [
