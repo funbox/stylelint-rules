@@ -1,49 +1,53 @@
-import { utils } from 'stylelint';
-import namespace from '../../utils/namespace';
+const utils = require('stylelint').utils;
+const namespace = require('../../utils/namespace');
 
-export const ruleName = namespace('declarations-before-nesting');
+const ruleName = namespace('declarations-before-nesting');
 
-export const messages = utils.ruleMessages(ruleName, {
+const messages = utils.ruleMessages(ruleName, {
   expected: 'Expected all declarations to come before nestings',
 });
 
-export default function (expectation) {
-  return (root, result) => {
-    const validOptions = utils.validateOptions(result, ruleName, {
-      actual: expectation,
+const rule = expectation => (root, result) => {
+  const validOptions = utils.validateOptions(result, ruleName, {
+    actual: expectation,
+  });
+
+  if (!validOptions) {
+    return;
+  }
+
+  root.walkRules(block => {
+    let rulesetIndex;
+
+    block.each((item, j) => {
+      let declarationIndex;
+      let declaration;
+
+      if (item.type === 'rule' && typeof rulesetIndex === 'undefined') {
+        rulesetIndex = j;
+      }
+
+      if (item.type === 'decl') {
+        declarationIndex = j;
+        declaration = item;
+      }
+
+      if (rulesetIndex < declarationIndex && declaration) {
+        utils.report({
+          message: messages.expected,
+          node: declaration,
+          result,
+          ruleName,
+        });
+      }
     });
 
-    if (!validOptions) {
-      return;
-    }
+    rulesetIndex = null;
+  });
+};
 
-    root.walkRules(block => {
-      let rulesetIndex;
-
-      block.each((item, j) => {
-        let declarationIndex;
-        let declaration;
-
-        if (item.type === 'rule' && typeof rulesetIndex === 'undefined') {
-          rulesetIndex = j;
-        }
-
-        if (item.type === 'decl') {
-          declarationIndex = j;
-          declaration = item;
-        }
-
-        if (rulesetIndex < declarationIndex && declaration) {
-          utils.report({
-            message: messages.expected,
-            node: declaration,
-            result,
-            ruleName,
-          });
-        }
-      });
-
-      rulesetIndex = null;
-    });
-  };
-}
+module.exports = {
+  ruleName,
+  messages,
+  rule,
+};

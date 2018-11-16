@@ -1,7 +1,7 @@
-import { createPlugin } from 'stylelint';
-import namespace from './utils/namespace';
-import rules from './rules';
+const createPlugin = require('stylelint').createPlugin;
+const namespace = require('./utils/namespace');
+const rules = require('./rules');
 
-const rulesPlugins = Object.keys(rules).map(ruleName => createPlugin(namespace(ruleName), rules[ruleName]));
+const rulesPlugins = Object.keys(rules).map(ruleName => createPlugin(namespace(ruleName), rules[ruleName].rule));
 
-export default rulesPlugins;
+module.exports = rulesPlugins;

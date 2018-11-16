@@ -1,4 +1,4 @@
-import rule, { ruleName, messages } from '..';
+const { rule, ruleName, messages } = require('..');
 
 testRule(rule, {
   ruleName,

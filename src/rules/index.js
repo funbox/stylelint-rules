@@ -1,7 +1,7 @@
-import declarationsBeforeNesting from './declarations-before-nesting';
-import noTransitionAll from './no-transition-all';
+const declarationsBeforeNesting = require('./declarations-before-nesting');
+const noTransitionAll = require('./no-transition-all');
 
-export default {
+module.exports = {
   'declarations-before-nesting': declarationsBeforeNesting,
   'no-transition-all': noTransitionAll,
 };

@@ -1,5 +1,5 @@
 const prefix = 'funbox-stylelint-rules';
 
-export default function namespace(ruleName) {
-  return `${prefix}/${ruleName}`;
-}
+const namespace = ruleName => `${prefix}/${ruleName}`;
+
+module.exports = namespace;
