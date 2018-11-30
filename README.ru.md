@@ -6,7 +6,7 @@
 
 ## Список правил
 
-`declarations-before-nesting` — следит за тем, чтобы прямые свойства всегда были выше вложенных.
+[declarations-before-nesting](./docs/rules/declarations-before-nesting.ru.md) — следит за тем, чтобы собственные свойства блока всегда были выше вложенных.
 
 Соответствует аналогичному правилу линтера sass-lint.
 
