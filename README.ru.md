@@ -10,6 +10,6 @@
 
 Соответствует аналогичному правилу линтера sass-lint.
 
-`no-transition-all` — запрещает использовать в свойстве `transition` неоптимальное значение `all`.
+[no-transition-all](./docs/rules/no-transition-all.ru.md) — следит за тем, чтобы внутри свойств `transition` и `transition-property` не использовалось значение `all`.
 
 Соответствует аналогичному правилу линтера sass-lint.
