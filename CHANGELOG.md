@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 (03.12.2018)
+
+Added description for `declarations-before-nesting` & `no-transition-all`.
+
+
 ## 1.0.2 (30.11.2018)
 
 Fixed `declarations-before-nestings` to allow comments after the nested rules.
