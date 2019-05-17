@@ -4,6 +4,12 @@
 
 Используется в пакете scss-lint-config.
 
+## Установка
+
+```
+npm install -D @funboxteam/stylelint-rules
+```
+
 ## Список правил
 
 [declarations-before-nesting](./docs/rules/declarations-before-nesting.ru.md) — следит за тем, чтобы собственные свойства блока всегда были выше вложенных.
