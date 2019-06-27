@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 (27.06.2019)
+
+Added installation info to README.
+
+
 ## 1.1.0 (03.12.2018)
 
 Added description for `declarations-before-nesting` & `no-transition-all`.
