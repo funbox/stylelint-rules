@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 (16.08.2019)
+
+Updated the deps.
+
+
 ## 1.2.0 (27.06.2019)
 
 Added installation info to README.
