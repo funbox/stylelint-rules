@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0 (23.10.2020)
+
+Breaking change: Added Stylelint as a peer dep.
+
+Also updated the deps, added LICENSE, fix audit errors, remove unused deps & code.
+
+
 ## 1.3.0 (16.08.2019)
 
 Updated the deps.
