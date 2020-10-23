@@ -1,24 +1,7 @@
-"use strict"; // eslint-disable-line
-
 const _ = require('lodash');
 const stylelint = require('stylelint');
 
 global.testRule = (rule, schema) => {
-  expect.extend({
-    toHaveMessage(testCase) {
-      if (testCase.message === undefined) {
-        return {
-          message: () => 'Expected "reject" test case to have a "message" property',
-          pass: false,
-        };
-      }
-
-      return {
-        pass: true,
-      };
-    },
-  });
-
   describe(schema.ruleName, () => {
     const stylelintConfig = {
       plugins: ['./src'],
@@ -50,7 +33,6 @@ global.testRule = (rule, schema) => {
                 .lint(Object.assign({ fix: true }, options))
                 .then(output2 => {
                   const fixedCode = getOutputCss(output2);
-
                   expect(fixedCode).toBe(testCase.code);
                 });
             });
@@ -76,7 +58,6 @@ global.testRule = (rule, schema) => {
               const warning = warnings[0];
 
               expect(warnings.length).toBeGreaterThanOrEqual(1);
-              // expect(testCase).toHaveMessage();
 
               if (testCase.message !== undefined) {
                 expect(_.get(warning, 'text')).toBe(testCase.message);
@@ -119,43 +100,5 @@ global.testRule = (rule, schema) => {
 function getOutputCss(output) {
   // eslint-disable-next-line no-underscore-dangle
   const result = output.results[0]._postcssResult;
-  const css = result.root.toString(result.opts.syntax);
-
-  return css;
+  return result.root.toString(result.opts.syntax);
 }
-
-global.testConfig = input => {
-  let testFn;
-
-  if (input.only) {
-    testFn = test.only;
-  } else if (input.skip) {
-    testFn = test.skip;
-  } else {
-    testFn = test;
-  }
-
-  testFn(input.description, () => {
-    const config = {
-      plugins: ['./'],
-      rules: {
-        [input.ruleName]: input.config,
-      },
-    };
-
-    return stylelint
-      .lint({
-        code: '',
-        config,
-      })
-      .then((data) => {
-        const invalidOptionWarnings = data.results[0].invalidOptionWarnings;
-
-        if (input.valid) {
-          expect(invalidOptionWarnings.length).toBe(0);
-        } else {
-          expect(invalidOptionWarnings[0].text).toBe(input.message);
-        }
-      });
-  });
-};
