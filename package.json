@@ -10,11 +10,11 @@
     "test-rule": "jest"
   },
   "devDependencies": {
-    "@funboxteam/eslint-config": "4.14.0",
-    "eslint": "6.1.0",
-    "husky": "3.0.3",
+    "@funboxteam/eslint-config": "5.1.0",
+    "eslint": "5.16.0",
+    "husky": "3.0.5",
     "jest": "24.8.0",
-    "lint-staged": "9.2.1",
+    "lint-staged": "10.4.2",
     "postcss": "7.0.17",
     "postcss-scss": "2.0.0"
   },
@@ -31,8 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged --quiet",
-      "post-commit": "git update-index --again"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
