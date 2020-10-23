@@ -9,6 +9,10 @@
     "url": "https://github.com/funbox/stylelint-rules"
   },
   "main": "src/index.js",
+  "files": [
+    "docs/",
+    "src/"
+  ],
   "scripts": {
     "lint": "eslint --cache -c .eslintrc.js --ext .js .",
     "test": "jest",
