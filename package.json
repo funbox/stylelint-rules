@@ -15,12 +15,15 @@
     "jest": "24.8.0",
     "lint-staged": "10.4.2",
     "postcss": "7.0.17",
-    "postcss-scss": "2.0.0"
+    "postcss-scss": "2.0.0",
+    "stylelint": "10.1.0"
   },
   "dependencies": {
     "lodash": "4.17.15",
-    "stylelint": "10.1.0",
     "stylelint-scss": "3.9.3"
+  },
+  "peerDependencies": {
+    "stylelint": "*"
   },
   "jest": {
     "setupFiles": [
