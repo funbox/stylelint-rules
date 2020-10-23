@@ -4,7 +4,7 @@
   "description": "A collection of SCSS rules missing in stylelint-scss",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint --cache -c .eslintrc.js --ext .js src",
+    "lint": "eslint --cache -c .eslintrc.js --ext .js .",
     "test": "jest",
     "watch": "jest --watch"
   },
@@ -34,6 +34,6 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": "eslint --fix --cache -c .eslintrc.js"
+    "*.js": "eslint --fix --cache -c .eslintrc.js"
   }
 }
