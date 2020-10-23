@@ -9,15 +9,13 @@
     "watch": "jest --watch"
   },
   "devDependencies": {
+    "@funboxteam/diamonds": "6.4.0",
     "@funboxteam/eslint-config": "5.1.0",
     "eslint": "5.16.0",
     "husky": "3.0.5",
     "jest": "24.8.0",
     "lint-staged": "10.4.2",
     "stylelint": "10.1.0"
-  },
-  "dependencies": {
-    "lodash": "4.17.15"
   },
   "peerDependencies": {
     "stylelint": "*"

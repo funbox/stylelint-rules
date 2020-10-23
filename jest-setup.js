@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const { getObjectPath } = require('@funboxteam/diamonds');
 const stylelint = require('stylelint');
 
 global.testRule = (rule, schema) => {
@@ -60,15 +60,15 @@ global.testRule = (rule, schema) => {
               expect(warnings.length).toBeGreaterThanOrEqual(1);
 
               if (testCase.message !== undefined) {
-                expect(_.get(warning, 'text')).toBe(testCase.message);
+                expect(getObjectPath(warning, 'text')).toBe(testCase.message);
               }
 
               if (testCase.line !== undefined) {
-                expect(_.get(warning, 'line')).toBe(testCase.line);
+                expect(getObjectPath(warning, 'line')).toBe(testCase.line);
               }
 
               if (testCase.column !== undefined) {
-                expect(_.get(warning, 'column')).toBe(testCase.column);
+                expect(getObjectPath(warning, 'column')).toBe(testCase.column);
               }
 
               if (!schema.fix) {
