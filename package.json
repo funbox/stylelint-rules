@@ -5,9 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint --cache -c .eslintrc.js --ext .js src",
-    "jest": "jest",
-    "watch": "jest --watch",
-    "test-rule": "jest"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "devDependencies": {
     "@funboxteam/eslint-config": "5.1.0",
