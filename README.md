@@ -1,6 +1,8 @@
 # @funboxteam/stylelint-rules
 
-[Stylelint](https://stylelint.io/) plugin that adds custom rules.
+[![npm](https://img.shields.io/npm/v/@funboxteam/stylelint-rules.svg)](https://www.npmjs.com/package/@funboxteam/stylelint-rules)
+
+[Stylelint](https://stylelint.io/) plugin with custom rules.
 
 [По-русски](./README.ru.md)
 
@@ -16,3 +18,5 @@ Obviously Stylelint should be installed too.
 
 - [declarations-before-nesting](./docs/rules/declarations-before-nesting.md) — forces block rules be placed above the nested blocks.
 - [no-transition-all](./docs/rules/no-transition-all.md) — prevents use `all` value for `transition` & `transition-property` props.
+
+[![Sponsored by FunBox](https://funbox.ru/badges/sponsored_by_funbox_centered.svg)](https://funbox.ru)
