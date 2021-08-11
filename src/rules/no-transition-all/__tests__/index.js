@@ -71,5 +71,15 @@ testRule(rule, {
       messages: messages.rejected,
       description: 'One transition property, all value is used.',
     },
+    {
+      code: `
+      .test-implicit-all-fail {
+        transition: 2s ease-in, width 7s;
+      }
+     `,
+      line: 3,
+      messages: messages.expected,
+      description: 'One explicit property and one implicit all value is used.',
+    },
   ],
 });
