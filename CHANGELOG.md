@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1. (11.08.2021)
+
+Fixed `no-transition-all` rule. Now it may check implicit `all`, e.g. `transition: 2s;`.
+
+
 ## 2.0.0 (23.10.2020)
 
 Breaking change: Added Stylelint as a peer dep.
