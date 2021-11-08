@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0 (08.11.2021)
+
+Added `rgba-hex-color-only` rule.
+
+
 ## 2.0.1. (11.08.2021)
 
 Fixed `no-transition-all` rule. Now it may check implicit `all`, e.g. `transition: 2s;`.
