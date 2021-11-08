@@ -18,5 +18,6 @@ Obviously Stylelint should be installed too.
 
 - [declarations-before-nesting](./docs/rules/declarations-before-nesting.md) — forces block rules be placed above the nested blocks.
 - [no-transition-all](./docs/rules/no-transition-all.md) — prevents use `all` value for `transition` & `transition-property` props.
+- [rgba-hex-color-only](./docs/rules/rgba-hex-color-only.md) — prevents use `rgba` function with non-hex color as a first argument.
 
 [![Sponsored by FunBox](https://funbox.ru/badges/sponsored_by_funbox_centered.svg)](https://funbox.ru)

@@ -1,6 +1,6 @@
 {
   "name": "@funboxteam/stylelint-rules",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "A collection of SCSS rules missing in stylelint-scss",
   "author": "Natalia Andreychenko <natandreychenko@gmail.com> (https://github.com/natrey)",
   "license": "MIT",

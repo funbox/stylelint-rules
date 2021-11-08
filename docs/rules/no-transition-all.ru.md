@@ -1,6 +1,6 @@
 # No Transition All
 
-Правило `no-transition-all` следит за тем, чтобы внутри свойств `transition` и `transition-property` не использовалось значение `all`.
+Следит за тем, чтобы внутри свойств `transition` и `transition-property` не использовалось значение `all`.
 
 Пример **недопустимого** кода при включенном правиле:
 
