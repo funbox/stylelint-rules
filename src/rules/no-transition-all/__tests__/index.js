@@ -11,7 +11,7 @@ testRule(rule, {
       .test-single-pass {
         -webkit-transition: width 2s;
         transition: width 2s;
-      }  
+      }
      `,
       description: 'One property.',
     },
@@ -35,6 +35,33 @@ testRule(rule, {
       }
      `,
       description: 'Different transition properties.',
+    },
+    {
+      code: `
+      .test-custom-animation {
+        -webkit-transition: width 2s cubic-bezier(.23, 1, .32, 1);
+        transition: width 2s cubic-bezier(.23, 1, .32, 1);
+      }
+     `,
+      description: 'Custom animation function.',
+    },
+    {
+      code: `
+      .test-custom-animation-compact {
+        -webkit-transition: width 2s cubic-bezier(.23,1,.32,1);
+        transition: width 2s cubic-bezier(.23,1,.32,1);
+      }
+     `,
+      description: 'Custom animation function compact.',
+    },
+    {
+      code: `
+      .test-linear-animation {
+        -webkit-transition: width 2s linear;
+        transition: width 2s linear;
+      }
+     `,
+      description: 'Linear animation function.',
     },
   ],
 
@@ -80,6 +107,34 @@ testRule(rule, {
       line: 3,
       messages: messages.expected,
       description: 'One explicit property and one implicit all value is used.',
+    },
+    {
+      code: `
+      .test-custom-animation {
+        -webkit-transition: 2s cubic-bezier(.23, 1, .32, 1);
+        transition: 2s cubic-bezier(.23, 1, .32, 1);
+      }
+     `,
+      description: 'Custom animation function.',
+    },
+
+    {
+      code: `
+      .test-custom-animation {
+        -webkit-transition: 2s cubic-bezier(.23,1,.32,1);
+        transition: 2s cubic-bezier(.23,1,.32,1);
+      }
+     `,
+      description: 'Custom animation function compact.',
+    },
+    {
+      code: `
+      .test-linear-animation {
+        -webkit-transition: 2s linear;
+        transition: 2s linear;
+      }
+     `,
+      description: 'Linear animation function.',
     },
   ],
 });

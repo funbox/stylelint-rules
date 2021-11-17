@@ -8,7 +8,7 @@ const messages = utils.ruleMessages(ruleName, {
 });
 
 const isImplicitTransitionAll = (shorthandValue) => {
-  const valueParts = shorthandValue.split(',').map(value => value.trim().split(' '));
+  const valueParts = parseTransitionValues(shorthandValue).map(value => value.trim().split(' '));
 
   const TIMING_FUNCTION_REGEXP = /^(ease|linear|step|cubic-bezier)/;
   const PROPERTY_REGEXP = /^[a-z]+(-[a-z]+)?$/;
@@ -49,3 +49,49 @@ module.exports = {
   messages,
   rule,
 };
+
+// continue is useful when we parse something
+/* eslint-disable no-continue */
+function parseTransitionValues(declValues) {
+  const values = [];
+  const declValuesSplitBySpace = declValues.split(' ');
+
+  let isInsideTimingFunction = false;
+  let currentValueParts = [];
+
+  for (let i = 0; i < declValuesSplitBySpace.length; i++) {
+    const part = declValuesSplitBySpace[i];
+
+    if (part.includes('(')) {
+      isInsideTimingFunction = true;
+    }
+
+    if (part.includes(')')) {
+      isInsideTimingFunction = false;
+    }
+
+    if (isInsideTimingFunction) {
+      currentValueParts.push(part);
+      continue;
+    }
+
+    if (part.endsWith(',')) {
+      currentValueParts.push(part.substr(0, part.length - 1));
+      values.push(currentValueParts.join(' '));
+      currentValueParts = [];
+      continue;
+    }
+
+    if (i === declValuesSplitBySpace.length - 1) {
+      currentValueParts.push(part);
+      values.push(currentValueParts.join(' '));
+      currentValueParts = [];
+      continue;
+    }
+
+    currentValueParts.push(part);
+  }
+
+  return values;
+}
+/* eslint-enable no-continue */
