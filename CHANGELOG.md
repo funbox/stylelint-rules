@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.1 (17.11.2021)
+
+Fixed false-positive `no-transition-all` for complex animation functions such as `cubic-bezier`.
+
+
 ## 2.1.0 (08.11.2021)
 
 Added `rgba-hex-color-only` rule.
