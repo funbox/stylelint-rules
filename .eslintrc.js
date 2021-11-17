@@ -6,5 +6,5 @@ module.exports = {
     describe: true,
     it: true,
     test: true,
-  }
+  },
 };

@@ -30,7 +30,7 @@ global.testRule = (rule, schema) => {
 
               // Check the fix
               return stylelint
-                .lint(Object.assign({ fix: true }, options))
+                .lint({ fix: true, ...options })
                 .then(output2 => {
                   const fixedCode = getOutputCss(output2);
                   expect(fixedCode).toBe(testCase.code);
@@ -83,7 +83,7 @@ global.testRule = (rule, schema) => {
 
               // Check the fix
               return stylelint
-                .lint(Object.assign({ fix: true }, options))
+                .lint({ fix: true, ...options })
                 .then(output2 => {
                   const fixedCode = getOutputCss(output2);
 
