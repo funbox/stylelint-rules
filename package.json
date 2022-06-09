@@ -19,6 +19,11 @@
     "test": "jest",
     "watch": "jest --watch"
   },
+  "dependencies": {
+    "lodash": "4.17.21",
+    "postcss-resolve-nested-selector": "0.1.1",
+    "postcss-selector-parser": "6.0.5"
+  },
   "devDependencies": {
     "@funboxteam/diamonds": "6.4.0",
     "@funboxteam/eslint-config": "7.1.0",
