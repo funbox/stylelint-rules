@@ -1,5 +1,3 @@
-const hasInterpolation = require('./hasInterpolation');
-
 /**
  * Check whether a selector is standard
  *
@@ -8,26 +6,11 @@ const hasInterpolation = require('./hasInterpolation');
  */
 // eslint-disable-next-line func-names
 module.exports = function (selector) {
-  // SCSS or Less interpolation
-  if (hasInterpolation(selector)) {
+  // SCSS interpolation (compatible with @funboxteam/scss-vars-loader)
+  if (/#{(?!\$b).+?}/.test(selector)) {
     return false;
   }
 
   // SCSS placeholder selectors
-  if (selector.startsWith('%')) {
-    return false;
-  }
-
-  // Less :extend()
-  if (/:extend(\(.*?\))?/.test(selector)) {
-    return false;
-  }
-
-  // Less mixin with resolved nested selectors (e.g. .foo().bar or .foo(@a, @b)[bar])
-  if (/\.[\w-]+\(.*\).+/i.test(selector)) {
-    return false;
-  }
-
-  // ERB template tags
-  return !(selector.includes('<%') || selector.includes('%>'));
+  return !selector.startsWith('%');
 };

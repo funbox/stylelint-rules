@@ -592,32 +592,6 @@ testRule(rule, {
 
 testRule(rule, {
   ruleName,
-  config: [0],
-  skipBasicChecks: true,
-  syntax: 'less',
-
-  accept: [
-    {
-      code: '// Comment\n.c {}',
-    },
-    {
-      code: '.for(@n: 1) when (@n <= 5) { .foo-@{n} { div { content: "@{n}"; } } .for (@n + 1); }',
-    },
-  ],
-
-  reject: [
-    {
-      code: '@foo: { div {} };',
-      description: 'non-standard at-rule less',
-      message: messages.expected('div', 0),
-      line: 1,
-      column: 9,
-    },
-  ],
-});
-
-testRule(rule, {
-  ruleName,
   config: [0, { ignoreTypes: ['fieldset', '/^my-/'] }],
   skipBasicChecks: true,
 

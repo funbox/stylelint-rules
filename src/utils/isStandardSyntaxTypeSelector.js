@@ -45,9 +45,5 @@ module.exports = function (node) {
   }
 
   // Reference combinators like `/deep/`
-  if (node.value.startsWith('/') && node.value.endsWith('/')) {
-    return false;
-  }
-
-  return true;
+  return !(node.value.startsWith('/') && node.value.endsWith('/'));
 };
