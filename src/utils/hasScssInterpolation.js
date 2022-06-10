@@ -5,5 +5,5 @@
  */
 // eslint-disable-next-line func-names
 module.exports = function (string) {
-  return /#{.+?}/.test(string);
+  return /#{(?!\$b).+?}/.test(string);
 };
