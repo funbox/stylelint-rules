@@ -1,19 +1,19 @@
 const _ = require('lodash');
 const resolvedNestedSelector = require('postcss-resolve-nested-selector');
 
-const isContextFunctionalPseudoClass = require('../../utils/isContextFunctionalPseudoClass');
-const isKeyframeSelector = require('../../utils/isKeyframeSelector');
-const isNonNegativeInteger = require('../../utils/isNonNegativeInteger');
-const isOnlyWhitespace = require('../../utils/isOnlyWhitespace');
-const isStandardSyntaxRule = require('../../utils/isStandardSyntaxRule');
-const isStandardSyntaxSelector = require('../../utils/isStandardSyntaxSelector');
-const isStandardSyntaxTypeSelector = require('../../utils/isStandardSyntaxTypeSelector');
+const isContextFunctionalPseudoClass = require('./utils/isContextFunctionalPseudoClass');
+const isKeyframeSelector = require('./utils/isKeyframeSelector');
+const isNonNegativeInteger = require('./utils/isNonNegativeInteger');
+const isOnlyWhitespace = require('./utils/isOnlyWhitespace');
+const isStandardSyntaxRule = require('./utils/isStandardSyntaxRule');
+const isStandardSyntaxSelector = require('./utils/isStandardSyntaxSelector');
+const isStandardSyntaxTypeSelector = require('./utils/isStandardSyntaxTypeSelector');
 const namespace = require('../../utils/namespace');
-const optionsMatches = require('../../utils/optionsMatches');
-const parseSelector = require('../../utils/parseSelector');
-const report = require('../../utils/report');
-const ruleMessages = require('../../utils/ruleMessages');
-const validateOptions = require('../../utils/validateOptions');
+const optionsMatches = require('./utils/optionsMatches');
+const parseSelector = require('./utils/parseSelector');
+const report = require('./utils/report');
+const ruleMessages = require('./utils/ruleMessages');
+const validateOptions = require('./utils/validateOptions');
 
 const ruleName = namespace('selector-max-type');
 
