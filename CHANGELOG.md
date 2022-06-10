@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.0 (16.06.2022)
+
+Added `selector-max-type` rule.
+
+
 ## 2.1.1 (17.11.2021)
 
 Fixed false-positive `no-transition-all` for complex animation functions such as `cubic-bezier`.
