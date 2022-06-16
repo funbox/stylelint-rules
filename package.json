@@ -1,6 +1,6 @@
 {
   "name": "@funboxteam/stylelint-rules",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "A collection of SCSS rules missing in stylelint-scss",
   "author": "Natalia Andreychenko <natandreychenko@gmail.com> (https://github.com/natrey)",
   "license": "MIT",
@@ -18,6 +18,11 @@
     "prepublishOnly": "lawyer",
     "test": "jest",
     "watch": "jest --watch"
+  },
+  "dependencies": {
+    "lodash": "4.17.21",
+    "postcss-resolve-nested-selector": "0.1.1",
+    "postcss-selector-parser": "6.0.5"
   },
   "devDependencies": {
     "@funboxteam/diamonds": "6.4.0",
