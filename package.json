@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "lint": "eslint --cache -c .eslintrc.js --ext .js .",
-    "prepublishOnly": "lawyer",
+    "prepublishOnly": "if [ -z \"$CI\" ]; then lawyer; fi",
     "test": "jest",
     "watch": "jest --watch"
   },
