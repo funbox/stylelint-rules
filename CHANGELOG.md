@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.0.0 (08.06.2023)
+
+Dropped Node.js 12 support.
+
+The package is probably still working on that version though, because we have not touched a line. But watch out.
+
+
 ## 2.2.0 (16.06.2022)
 
 Added `selector-max-type` rule.
